@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "go",
+      "label": "build",
+      "command": "build",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "GOOS": "windows"
+        }
+      },
+      "args": ["-o", "./bin/goscrcpy", "."],
+      "problemMatcher": ["$go"],
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "kill server",
+      "command": "adb.exe",
+      "options": {
+        "cwd": "${workspaceFolder}/res/adb"
+      },
+      "args": ["kill-server"],
+      "problemMatcher": []
+    }
+  ]
+}
